@@ -83,9 +83,38 @@ export const editCategory = async (req, res) => {
 
 export const deleteCategory = async (req, res) => {
     try {
+        const {id} = req.params;
         
+        const deletedCategory = await Category.findById({_id: id});
+        if(!deletedCategory){
+            return res.status(404).json({
+                success: false,
+                message: "Category not found",
+            });
+        }
+
+        const defaultCategory = await Category.findOne({name: "Default"});
+        if(!defaultCategory){
+            return res.status(404).json({
+                success: false,
+                message: "Default category not found",
+            });
+        }
+
+        //await Product.updateMany({category: id}, {category: defaultCategory._id});
+
+        
+        await Category.findByIdAndUpdate(id, {status: false});
+
+        res.status(200).json({
+            success: true,
+            message: "Category deleted successfully",
+        })
     } catch (err) {
-        
+        res.status(500).json({
+            success: false,
+            message: "Error deleting category",
+        });
     }
 }
 
