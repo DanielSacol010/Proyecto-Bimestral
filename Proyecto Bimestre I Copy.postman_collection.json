@@ -1,0 +1,440 @@
+{
+	"info": {
+		"_postman_id": "106b93de-6c3a-4ad7-8848-a771c3ac9633",
+		"name": "Proyecto Bimestre I Copy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37637382"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Angel",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Mejía",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "amejia",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "amejia@gmail.es",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "22160098",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Amejia123*",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN_ROLE",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "postman-cloud:///1ef4dc1f-9b79-4680-a529-ea114dc8ffeb"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"amejia@gmail.es\",\r\n    \"password\":\"Amejia123*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "create category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FlY2FhMDc0MTUyYWE2YmIzYzFmNjgiLCJpYXQiOjE3Mzk1MDg0ODUsImV4cCI6MTczOTUxMjA4NX0.SEcffYBOXzpRk2M_SzLysvmqshtTLZCpsYQLyNT3dUo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Juguetes\",\r\n    \"description\": \"todo tipo de jugetes\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/categories/createCategory",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"categories",
+								"createCategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/categories/getCategories",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"categories",
+								"getCategories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit category",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Juguetes de niños\",\r\n    \"description\": \"todos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/categories/editCategory/67ad7fb1b959f3a91011abf2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"categories",
+								"editCategory",
+								"67ad7fb1b959f3a91011abf2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Angel",
+									"type": "text"
+								},
+								{
+									"key": "surname",
+									"value": "Mejía",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "amejia",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "amejia@gmail.es",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "22160098",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Amejia123*",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "ADMIN_ROLE",
+									"type": "text"
+								},
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "postman-cloud:///1ef4dc1f-9b79-4680-a529-ea114dc8ffeb"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modify role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FlY2FhMDc0MTUyYWE2YmIzYzFmNjgiLCJpYXQiOjE3Mzk1MDg0ODUsImV4cCI6MTczOTUxMjA4NX0.SEcffYBOXzpRk2M_SzLysvmqshtTLZCpsYQLyNT3dUo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": \"CLIENT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/users/modifyRole/67aecad774152aa6bb3c1f6c",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"users",
+								"modifyRole",
+								"67aecad774152aa6bb3c1f6c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FlY2FhMDc0MTUyYWE2YmIzYzFmNjgiLCJpYXQiOjE3Mzk1MDg0ODUsImV4cCI6MTczOTUxMjA4NX0.SEcffYBOXzpRk2M_SzLysvmqshtTLZCpsYQLyNT3dUo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Cannavrino\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/users/updateUser/67aecad774152aa6bb3c1f6c",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"users",
+								"updateUser",
+								"67aecad774152aa6bb3c1f6c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FlY2FhMDc0MTUyYWE2YmIzYzFmNjgiLCJpYXQiOjE3Mzk1MDg0ODUsImV4cCI6MTczOTUxMjA4NX0.SEcffYBOXzpRk2M_SzLysvmqshtTLZCpsYQLyNT3dUo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/users/deleteUser/67aecad774152aa6bb3c1f6c",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"users",
+								"deleteUser",
+								"67aecad774152aa6bb3c1f6c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
