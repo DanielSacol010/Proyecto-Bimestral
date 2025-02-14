@@ -37,8 +37,8 @@ const userSchema = Schema({
     role:{
         type: String,
         required: true,
-        enum: ["ADMIN", "CLIENT"],
-        default: "CLIENT"
+        enum: ["ADMIN_ROLE", "CLIENT_ROLE"],
+        default: "CLIENT_ROLE"
     },
     status:{
         type: Boolean,

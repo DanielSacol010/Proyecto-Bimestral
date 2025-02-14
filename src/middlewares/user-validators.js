@@ -35,7 +35,7 @@ export const loginValidator = [
 
 export const createUserValidator = [
     validateJWT,
-    hasRoles("ADMIN"),
+    hasRoles("ADMIN_ROLE"),
     body("name").notEmpty().withMessage("Name is required"),
     body("username").notEmpty().withMessage("Username is required"),
     body("email").notEmpty().withMessage("Email is required"),
@@ -56,31 +56,63 @@ export const createUserValidator = [
 
 export const modifyRoleValidator = [
     validateJWT,
-    hasRoles("ADMIN"),
+    hasRoles("ADMIN_ROLE"),
     param("uid").isMongoId().withMessage("Invalid user ID"),
     body("role").isIn(["ADMIN", "CLIENT"]).withMessage("Invalid role"),
     validarCampos,
     handleErrors
 ];
 
-export const updateUserValidator = [
+export const updateUserValidatorAdmin = [
     validateJWT,
-    hasRoles("ADMIN"),
+    hasRoles("ADMIN_ROLE"),
     param("uid").isMongoId().withMessage("Invalid user ID"),
     param("uid").custom(isClientRole),
     body("name").optional(),
     body("username").optional(),
     body("phone").optional(),
     body("surname").optional(),
+    body("email").optional().isEmail().withMessage("Invalid email"),
+    validarCampos,
+    handleErrors
+]
+
+export const updateUserValidatorClient = [
+    validateJWT,
+    hasRoles("CLIENT_ROLE"),
     validarCampos,
     handleErrors
 ]
 
 export const deleteUserValidator = [
     validateJWT,
-    hasRoles("ADMIN"),
+    hasRoles("ADMIN_ROLE"),
     param("uid").isMongoId().withMessage("Invalid user ID"),
     param("uid").custom(isClientRole),
+    validarCampos,
+    handleErrors
+]
+
+export const updatePasswordValidator = [
+    validateJWT,
+    hasRoles("CLIENT_ROLE", "ADMIN_ROLE"),
+    body("newPassword").isLength({ min: 8 }).withMessage("El password debe contener al menos 8 caracteres"),
+    validarCampos,
+    handleErrors
+]
+
+export const updateProfilePictureValidator = [
+    validateJWT,
+    hasRoles("CLIENT_ROLE", "ADMIN_ROLE"),
+    validarCampos,
+    deleteFileOnError,
+    handleErrors
+
+]
+
+export const deleteUserClientValidator = [
+    validateJWT,
+    hasRoles("CLIENT_ROLE"),
     validarCampos,
     handleErrors
 ]

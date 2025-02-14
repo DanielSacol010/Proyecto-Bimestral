@@ -26,7 +26,7 @@ export const isClientRole = async (uid = " ") => {
     if(!user){
         throw new Error("User not found")
     }
-    if(user.role !== "CLIENT"){
+    if(user.role !== "CLIENT_ROLE"){
         throw new Error("Can only modify users with CLIENT role")
     }
 }
