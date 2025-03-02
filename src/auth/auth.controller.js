@@ -29,7 +29,8 @@ export const login = async (req, res) => {
     const { email, username, password } = req.body
     try{
         const user = await User.findOne({
-            $or:[{email: email}, {username: username}]
+            $or:[{email: email}, {username: username}],
+            status: true
         })
 
         if(!user){

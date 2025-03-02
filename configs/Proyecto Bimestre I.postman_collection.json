@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "106b93de-6c3a-4ad7-8848-a771c3ac9633",
-		"name": "Proyecto Bimestre I Copy",
+		"_postman_id": "ce3d80c8-690e-4978-957c-0d8dc27b4918",
+		"name": "Proyecto Bimestre I",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37637382"
+		"_exporter_id": "42278127"
 	},
 	"item": [
 		{
@@ -225,10 +225,35 @@
 				{
 					"name": "delete category",
 					"request": {
-						"method": "GET",
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0NjM4OWU4OGM2NWU0MWRjODAzY2MiLCJpYXQiOjE3NDA5MzgwODgsImV4cCI6MTc0MDk0MTY4OH0.H_nvmNCo-r4d7RC-X9VfXAvIy3I1e2jOwX9kL0iPBNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/categories/deleteCategory/67c49d4db2adf8dc3268e946",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"categories",
+								"deleteCategory",
+								"67c49d4db2adf8dc3268e946"
+							]
 						}
 					},
 					"response": []
@@ -236,11 +261,21 @@
 			]
 		},
 		{
-			"name": "User",
+			"name": "user",
 			"item": [
 				{
 					"name": "create user",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0NjM4OWU4OGM2NWU0MWRjODAzY2MiLCJpYXQiOjE3NDA5MjM5NjQsImV4cCI6MTc0MDkyNzU2NH0.6rDcJmUTUHnkz_8ms_bdfBlrYbnI1n_VEwkqM6QiUO0",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
 						"header": [],
 						"body": {
@@ -248,22 +283,22 @@
 							"formdata": [
 								{
 									"key": "name",
-									"value": "Angel",
+									"value": "Miguel",
 									"type": "text"
 								},
 								{
 									"key": "surname",
-									"value": "Mejía",
+									"value": "Rosales",
 									"type": "text"
 								},
 								{
 									"key": "username",
-									"value": "amejia",
+									"value": "mrosales",
 									"type": "text"
 								},
 								{
 									"key": "email",
-									"value": "amejia@gmail.es",
+									"value": "mrosales@gmail.es",
 									"type": "text"
 								},
 								{
@@ -284,7 +319,7 @@
 								{
 									"key": "profilePicture",
 									"type": "file",
-									"src": "postman-cloud:///1ef4dc1f-9b79-4680-a529-ea114dc8ffeb"
+									"src": "/C:/Users/danie/Downloads/Messi.jpg"
 								}
 							]
 						},
@@ -316,7 +351,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FlY2FhMDc0MTUyYWE2YmIzYzFmNjgiLCJpYXQiOjE3Mzk1MDg0ODUsImV4cCI6MTczOTUxMjA4NX0.SEcffYBOXzpRk2M_SzLysvmqshtTLZCpsYQLyNT3dUo",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0NjM4OWU4OGM2NWU0MWRjODAzY2MiLCJpYXQiOjE3NDA5MjM5NjQsImV4cCI6MTc0MDkyNzU2NH0.6rDcJmUTUHnkz_8ms_bdfBlrYbnI1n_VEwkqM6QiUO0",
 									"type": "string"
 								}
 							]
@@ -325,7 +360,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"role\": \"CLIENT\"\r\n}",
+							"raw": "{\r\n    \"role\": \"CLIENT_ROLE\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -333,7 +368,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3000/onlineSales/v1/users/modifyRole/67aecad774152aa6bb3c1f6c",
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/users/modifyRole/67c464ade88c65e41dc803d1",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -347,7 +382,7 @@
 								"v1",
 								"users",
 								"modifyRole",
-								"67aecad774152aa6bb3c1f6c"
+								"67c464ade88c65e41dc803d1"
 							]
 						}
 					},
@@ -361,16 +396,16 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2FlY2FhMDc0MTUyYWE2YmIzYzFmNjgiLCJpYXQiOjE3Mzk1MDg0ODUsImV4cCI6MTczOTUxMjA4NX0.SEcffYBOXzpRk2M_SzLysvmqshtTLZCpsYQLyNT3dUo",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0NjM4OWU4OGM2NWU0MWRjODAzY2MiLCJpYXQiOjE3NDA5MzU3MjUsImV4cCI6MTc0MDkzOTMyNX0.C6Xurjm7WJCRCOsagbwUjMAj10DvAgeogpVx-mupSQc",
 									"type": "string"
 								}
 							]
 						},
-						"method": "PATCH",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Cannavrino\"\r\n}",
+							"raw": "{\r\n    \r\n    \"status\": true\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -378,7 +413,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:3000/onlineSales/v1/users/updateUser/67aecad774152aa6bb3c1f6c",
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/users/updateUser/67c490edc7d48a451efbb06d",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -392,7 +427,7 @@
 								"v1",
 								"users",
 								"updateUser",
-								"67aecad774152aa6bb3c1f6c"
+								"67c490edc7d48a451efbb06d"
 							]
 						}
 					},
@@ -429,6 +464,183 @@
 								"users",
 								"deleteUser",
 								"67aecad774152aa6bb3c1f6c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0NjM4OWU4OGM2NWU0MWRjODAzY2MiLCJpYXQiOjE3NDA5MzgwODgsImV4cCI6MTc0MDk0MTY4OH0.H_nvmNCo-r4d7RC-X9VfXAvIy3I1e2jOwX9kL0iPBNo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"dsacol010\",\r\n    \"status\": false,\r\n    \"role\": \"CLIENT_ROLE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/users/updateUser",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"users",
+								"updateUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user client",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0OTBlZGM3ZDQ4YTQ1MWVmYmIwNmQiLCJpYXQiOjE3NDA5MzY3MTIsImV4cCI6MTc0MDk0MDMxMn0.OwuJfSi3wHEOvCDyZBOjsq93_hWRmlvPq4GcoMZV8i0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"1234Abc*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/users/deleteUser",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"users",
+								"deleteUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0OTBlZGM3ZDQ4YTQ1MWVmYmIwNmQiLCJpYXQiOjE3NDA5MzY3MTIsImV4cCI6MTc0MDk0MDMxMn0.OwuJfSi3wHEOvCDyZBOjsq93_hWRmlvPq4GcoMZV8i0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newPassword\": \"1234Abc*\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/users/updatePassword",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"users",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile picture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0OTBlZGM3ZDQ4YTQ1MWVmYmIwNmQiLCJpYXQiOjE3NDA5Mzc2MzUsImV4cCI6MTc0MDk0MTIzNX0.i3X3jmtxY7BAQk9cLfMIN26qYGaEV8jaE5KM3yhjcsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/C:/Users/danie/Pictures/Screenshots/Captura de pantalla 2025-02-23 201258.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/users/updateProfilePicture",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"users",
+								"updateProfilePicture"
 							]
 						}
 					},
