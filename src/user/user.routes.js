@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { createUser, modifyRole, updateUserAdmin, deleteUser, updateUserClient, updatePassword, updateProfilePicture, deleteUserClient } from "./user.controller.js";
+import { createUser, modifyRole, updateUserAdmin, deleteUser, updateUser, updatePassword, updateProfilePicture, deleteUserClient } from "./user.controller.js";
 import { uploadProfilePicture } from "../middlewares/multer-uploads.js";
 import { deleteFileOnError } from "../middlewares/delete-file-on-error.js";
-import { createUserValidator, modifyRoleValidator, updateUserValidatorAdmin, deleteUserValidator, updateUserValidatorClient, updatePasswordValidator, updateProfilePictureValidator, deleteUserClientValidator } from "../middlewares/user-validators.js";
+import { createUserValidator, modifyRoleValidator, updateUserValidatorAdmin, deleteUserValidator, updateUserValidator, updatePasswordValidator, updateProfilePictureValidator, deleteUserClientValidator } from "../middlewares/user-validators.js";
 
 const router = Router();
 
@@ -11,7 +11,7 @@ router.post(
     uploadProfilePicture.single("profilePicture"), 
     createUserValidator, 
     deleteFileOnError,
-    createUser
+    createUser  
 )
 
 router.patch(
@@ -20,7 +20,7 @@ router.patch(
     modifyRole
 )
 
-router.patch(
+router.put(
     "/updateUser/:uid",
     updateUserValidatorAdmin,
     updateUserAdmin
@@ -34,8 +34,8 @@ router.delete(
 
 router.put(
     "/updateUser",
-    updateUserValidatorClient,
-    updateUserClient
+    updateUserValidator,
+    updateUser
     
 )
 

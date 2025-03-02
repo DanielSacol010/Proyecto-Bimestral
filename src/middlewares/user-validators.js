@@ -58,7 +58,7 @@ export const modifyRoleValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),
     param("uid").isMongoId().withMessage("Invalid user ID"),
-    body("role").isIn(["ADMIN", "CLIENT"]).withMessage("Invalid role"),
+    body("role").isIn(["ADMIN_ROLE", "CLIENT_ROLE"]).withMessage("Invalid role"),
     validarCampos,
     handleErrors
 ];
@@ -77,9 +77,10 @@ export const updateUserValidatorAdmin = [
     handleErrors
 ]
 
-export const updateUserValidatorClient = [
+export const updateUserValidator = [
     validateJWT,
-    hasRoles("CLIENT_ROLE"),
+    hasRoles("CLIENT_ROLE", "ADMIN_ROLE"),
+    body("email").optional().isEmail().withMessage("Invalid email"),
     validarCampos,
     handleErrors
 ]
@@ -113,6 +114,7 @@ export const updateProfilePictureValidator = [
 export const deleteUserClientValidator = [
     validateJWT,
     hasRoles("CLIENT_ROLE"),
+    body("password").notEmpty().withMessage("Password is required"),
     validarCampos,
     handleErrors
 ]

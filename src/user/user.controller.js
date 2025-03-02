@@ -1,5 +1,41 @@
 import User from "./user.model.js"
 import { hash, verify } from "argon2"
+import fs from "fs/promises";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+export const initializeAdmin = async () => {
+    try {
+        const adminExists = await User.findOne({ role: "ADMIN_ROLE" }); 
+        if (!adminExists) {
+
+            const hashedPassword = await hash("Admin123*");
+
+            const adminUser = {
+                username: "dsacol10",
+                email: "dsacol10@gmail.com",
+                phone: "33815217",
+                name: "Daniel",
+                surname: "Sacol",
+                password: hashedPassword,
+                role: "ADMIN_ROLE"
+            };
+            const admin = new User(adminUser);
+            await admin.save();
+            console.log("Admin created successfully");
+        } else {
+            console.log("Admin already exists");
+        }
+
+    } catch (error) {
+        console.error("Error creating admin:", error);
+    }
+
+};
+
+initializeAdmin();
 
 export const createUser = async (req, res) => {
     try {
@@ -51,7 +87,7 @@ export const updateUserAdmin = async (req, res) => {
         const { uid } = req.params;
         const data = req.body;
 
-        const user = await User.findByIdAndUpdate(uid, data, { new: true });
+        const user = await User.findByIdAndUpdate(uid, data,{ new: true });
 
         return res.status(200).json({
             message: "User has been updated",
@@ -65,11 +101,14 @@ export const updateUserAdmin = async (req, res) => {
     }
 }
 
-export const updateUserClient = async (req, res) => {
+export const updateUser = async (req, res) => {
     try {
         const { usuario } = req;
         const data = req.body;
-
+        delete data.password;
+        delete data.role;
+        delete data.status;
+        
         const user = await User.findByIdAndUpdate(usuario._id,  data, { new: true });
 
         return res.status(200).json({
@@ -174,16 +213,36 @@ export const updateProfilePicture = async (req, res) => {
     }
 };
 
-export const deleteUserClient = async (req, resk) => {
+export const deleteUserClient = async (req, res) => {
     try{
         const { usuario } = req;
-        const user = await User.findByIdAndUpdate(usuario._id, { status: false }, { new: true });
+        const { password } = req.body;
+
+        if(!password){
+            return res.status(400).json({
+                success: false,
+                message: "Password is required"
+            });
+        }
+
+        const matchPasswords = await verify(usuario.password, password);
+
+        if (!matchPasswords) {
+            return res.status(400).json({
+                success: false,
+                message: "If you want to delete your account, you must enter your password"
+            });
+        }
+       
+        await User.findByIdAndUpdate(usuario._id, { status: false }, { new: true });
+
 
         return res.status(200).json({
+            succes: true,
             message: "User has been deleted",
-            user
         });
     } catch (err) {
+        console.log(err)
         return res.status(500).json({
             message: "User deletion failed",
             error: err.message
