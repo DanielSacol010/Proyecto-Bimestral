@@ -6,6 +6,8 @@ import { validateJWT } from "./validate-jwt.js";
 import { hasRoles } from "./validate-roles.js";
 import { categoryExists } from "../helpers/db-validators.js";
 import { productExists } from "../helpers/db-validators.js";
+import { deleteFileOnError } from "./delete-file-on-error.js";
+
 export const createProductValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),
@@ -16,6 +18,7 @@ export const createProductValidator = [
     body("category").notEmpty().isMongoId().withMessage("Invalid category ID"),
     body("category").custom(categoryExists),
     validarCampos,
+    deleteFileOnError,
     handleErrors
 ]
 

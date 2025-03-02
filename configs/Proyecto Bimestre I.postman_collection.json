@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ce3d80c8-690e-4978-957c-0d8dc27b4918",
+		"_postman_id": "96b72699-5bf5-40c7-8502-bf35fb3f560b",
 		"name": "Proyecto Bimestre I",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "42278127"
@@ -641,6 +641,152 @@
 								"v1",
 								"users",
 								"updateProfilePicture"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0NjM4OWU4OGM2NWU0MWRjODAzY2MiLCJpYXQiOjE3NDA5NTIyMzgsImV4cCI6MTc0MDk1NTgzOH0.OGroSfU4lvG6fp90jEB5Wd5cP3Gaw7Y04Q-8t17mC_s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Goku ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Figura de acción de goku",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "67c49d4db2adf8dc3268e946",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "300",
+									"type": "text"
+								},
+								{
+									"key": "productPicture",
+									"type": "file",
+									"src": "/C:/Users/danie/Downloads/Goku.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/product/createProduct",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"product",
+								"createProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0NjM4OWU4OGM2NWU0MWRjODAzY2MiLCJpYXQiOjE3NDA5NTU1MzcsImV4cCI6MTc0MDk1OTEzN30.SlpHjSp72oyOAHq1sdahAB4jG_oGC5EWc9vwR_qixuU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/product/getProducts",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"product",
+								"getProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0NjM4OWU4OGM2NWU0MWRjODAzY2MiLCJpYXQiOjE3NDA5NTU1MzcsImV4cCI6MTc0MDk1OTEzN30.SlpHjSp72oyOAHq1sdahAB4jG_oGC5EWc9vwR_qixuU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/product/getProduct/67c4d53488f4d6ce4a9bb02d",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"product",
+								"getProduct",
+								"67c4d53488f4d6ce4a9bb02d"
 							]
 						}
 					},
