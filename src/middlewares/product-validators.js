@@ -37,3 +37,36 @@ export const getProductValidator = [
     validarCampos,
     handleErrors
 ]
+
+export const editProductValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    body("category").optional().isMongoId().withMessage("Invalid category ID").custom(categoryExists),
+    validarCampos,
+    handleErrors
+]
+
+export const updateProductPictureValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    param("pid").notEmpty().isMongoId().withMessage("Invalid product ID"),
+    param("pid").custom(productExists),
+    validarCampos,
+    deleteFileOnError,
+    handleErrors
+
+]
+
+export const getOutOfStockProductsValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    validarCampos,
+    handleErrors
+]
+
+export const getBestSellingProductsValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    validarCampos,
+    handleErrors
+]

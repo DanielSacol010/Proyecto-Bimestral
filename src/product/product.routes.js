@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { createProductValidator, getProductsValidator , getProductValidator} from "../middlewares/product-validators.js";
+import { createProductValidator, getProductsValidator , getProductValidator, editProductValidator, getOutOfStockProductsValidator, getBestSellingProductsValidator, updateProductPictureValidator } from "../middlewares/product-validators.js";
 import { uploadProductPicture } from "../middlewares/multer-uploads.js";
-import { createProduct, getProducts, getProduct} from "./product.controller.js";    
+import { createProduct, getProducts, getProduct, editProduct, getOutOfStockProducts, getBestSellingProducts, updateProductPicture } from "./product.controller.js";    
 
 const router = Router();
 
@@ -24,5 +24,32 @@ router.get(
     getProductValidator,
     getProduct
 )
+
+router.put(
+    "/editProductById/:pid",
+    editProductValidator,
+    editProduct
+)
+
+router.patch(
+    "/updateProductPicture/:pid",
+    updateProductPictureValidator,
+    uploadProductPicture.single("newProductPicture"),
+    updateProductPicture
+);
+
+router.get(
+    "/getOutOfStockProducts",
+    getOutOfStockProductsValidator,
+    getOutOfStockProducts
+)
+
+router.get(
+    "/getBestSellingProducts",
+    getBestSellingProductsValidator,
+    getBestSellingProducts
+)
+
+
 
 export default router;
