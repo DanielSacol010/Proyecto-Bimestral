@@ -70,3 +70,19 @@ export const getBestSellingProductsValidator = [
     validarCampos,
     handleErrors
 ]
+
+export const filterProductsValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE", "CLIENT_ROLE"),
+    body("category").optional().isMongoId().withMessage("Invalid category ID").custom(categoryExists),
+    validarCampos,
+    handleErrors
+]
+
+export const deleteProductValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    body("category").optional().isMongoId().withMessage("Invalid category ID").custom(categoryExists),
+    validarCampos,
+    handleErrors
+]

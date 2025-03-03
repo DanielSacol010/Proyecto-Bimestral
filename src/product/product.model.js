@@ -34,6 +34,10 @@ const productSchema = Schema({
         ref: "Category",
         required: true
     },
+    status:{
+        type: Boolean,
+        deafult: true
+    }
 },
 {
     versionKey: false,

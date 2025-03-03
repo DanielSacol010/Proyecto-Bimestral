@@ -32,3 +32,10 @@ export const deleteCategoryValidator = [
     handleErrors
 ]
 
+export const getCategoriesValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE", "CLIENT_ROLE"),
+    validarCampos,
+    handleErrors
+]
+

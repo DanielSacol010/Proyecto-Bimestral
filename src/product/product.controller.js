@@ -29,44 +29,51 @@ export const createProduct = async (req, res) => {
 export const getProducts = async (req, res) => {
     try {
         const { limit = 10, from = 0 } = req.query;
+        const query = { status: true };
         const [total, products] = await Promise.all([
-            Product.countDocuments(),
-            Product.find()
+            Product.countDocuments(query),
+            Product.find(query)
                 .skip(Number(from))
                 .limit(Number(limit))
                 .populate("category", "name")
-                
         ]);
 
         return res.status(200).json({
             success: true,
             total,
             products
-        })
+        });
     } catch (err) {
         return res.status(500).json({
             success: false,
             message: "Error fetching products",
             error: err.message
-        })
+        });
     }
-}
+};
 
 export const getProduct = async (req, res) => {
     try {
         const { pid } = req.params;
-        const product = await Product.findById(pid).populate("category", "name");
+        const product = await Product.findOne({ _id: pid, status: true }).populate("category", "name");
+
+        if (!product) {
+            return res.status(404).json({
+                success: false,
+                message: "Product not found"
+            });
+        }
 
         return res.status(200).json({
             success: true,
             product
-        })
+        });
     } catch (err) {
         return res.status(500).json({
             success: false,
             message: "Error fetching product",
             error: err.message
-        })
+        });
     }
 }
 
@@ -137,7 +144,7 @@ export const updateProductPicture = async (req, res) => {
 export const getOutOfStockProducts = async (req, res) => {
     try {
         const { limit = 10, from = 0 } = req.query;
-        const query = { stock: 0 };
+        const query = { stock: 0, status: true };
         
         const [total, products] = await Promise.all([
             Product.countDocuments(query),
@@ -164,10 +171,11 @@ export const getOutOfStockProducts = async (req, res) => {
 export const getBestSellingProducts = async (req, res) => {
     try {
         const { limit = 10, from = 0 } = req.query;
+        const query = { status: true };
         
         const [total, products] = await Promise.all([
-            Product.countDocuments(),
-            Product.find()
+            Product.countDocuments(query),
+            Product.find(query)
                 .sort({ sold: -1 })
                 .skip(Number(from))
                 .limit(Number(limit))
@@ -188,6 +196,59 @@ export const getBestSellingProducts = async (req, res) => {
         });
     }
 }
+
+export const filterProducts = async (req, res) => {
+    try {
+        const { name, category, mostSold } = req.query;
+        const filter = { status: true };
+
+        if (category) {
+            filter.category = category;
+        }
+
+        if (name) {
+            filter.name = { $regex: name, $options: 'i' }; 
+        }
+
+        let sort = {};
+        if (mostSold) {
+            sort.sold = -1; 
+        }
+        
+        const products = await Product.find(filter).sort(sort).populate("category", "name");
+
+        return res.status(200).json({
+            success: true,
+            products
+        });
+    } catch (err) {
+        return res.status(500).json({
+            success: false,
+            message: "Error filtering products",
+            error: err.message
+        });
+    }
+};
+
+export const deleteProduct = async (req, res) => {
+    try{
+        const { pid } = req.params;
+
+        const product = await Product.findByIdAndUpdate(pid, {status: false}, {new: true})
+
+        return res.status(200).json({
+            message: "Product has been deleted",
+            product
+        });
+    } catch (err) {
+        return res.status(500).json({
+            message: "Product deletion failed",
+            error: err.message
+        });
+    }
+}
+
+
 
 
 

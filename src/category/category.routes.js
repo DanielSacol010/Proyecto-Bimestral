@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { createCategory, getCategories, editCategory, deleteCategory } from "../category/category.controller.js";
-import { createCategoryValidator, editCategoryValidator, deleteCategoryValidator } from "../middlewares/category-validators.js";
+import { createCategoryValidator, editCategoryValidator, deleteCategoryValidator, getCategoriesValidator } from "../middlewares/category-validators.js";
 
 const router = Router();
 
@@ -61,7 +61,7 @@ router.post("/createCategory", createCategoryValidator, createCategory);
  *       "500":
  *         description: Internal server error.
  */
-router.get("/getCategories", getCategories);
+router.get("/getCategories", getCategoriesValidator, getCategories);
 
 /**
  * @swagger
