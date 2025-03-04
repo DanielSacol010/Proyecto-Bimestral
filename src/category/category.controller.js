@@ -1,6 +1,6 @@
 'use strict'
 import Category from "./category.model.js";
-
+import Product from "../product/product.model.js";
 
 export const initializeDefaultCategories = async () => {
     try {
@@ -101,7 +101,7 @@ export const deleteCategory = async (req, res) => {
             });
         }
 
-        //await Product.updateMany({category: id}, {category: defaultCategory._id});
+        await Product.updateMany({category: id}, {category: defaultCategory._id});
 
         
         await Category.findByIdAndUpdate(id, {status: false});

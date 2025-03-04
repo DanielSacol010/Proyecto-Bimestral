@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "ce3d80c8-690e-4978-957c-0d8dc27b4918",
+		"_postman_id": "229a570f-2586-4b71-ac3b-53d880db33f9",
 		"name": "Proyecto Bimestre I",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "42278127"
+		"_exporter_id": "41829896"
 	},
 	"item": [
 		{
@@ -86,7 +86,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"amejia@gmail.es\",\r\n    \"password\":\"Amejia123*\"\r\n}",
+							"raw": "{\r\n    \"email\":\"dsacol10@gmail.com\",\r\n    \"password\":\"Admin123*\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -641,6 +641,380 @@
 								"v1",
 								"users",
 								"updateProfilePicture"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0NjM4OWU4OGM2NWU0MWRjODAzY2MiLCJpYXQiOjE3NDA5NTIyMzgsImV4cCI6MTc0MDk1NTgzOH0.OGroSfU4lvG6fp90jEB5Wd5cP3Gaw7Y04Q-8t17mC_s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Goku ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Figura de acción de goku",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "67c49d4db2adf8dc3268e946",
+									"type": "text"
+								},
+								{
+									"key": "stock",
+									"value": "50",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "300",
+									"type": "text"
+								},
+								{
+									"key": "productPicture",
+									"type": "file",
+									"src": "/C:/Users/danie/Downloads/Goku.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/product/createProduct",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"product",
+								"createProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0NjM4OWU4OGM2NWU0MWRjODAzY2MiLCJpYXQiOjE3NDA5NTU1MzcsImV4cCI6MTc0MDk1OTEzN30.SlpHjSp72oyOAHq1sdahAB4jG_oGC5EWc9vwR_qixuU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/product/getProducts",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"product",
+								"getProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get product by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0NjM4OWU4OGM2NWU0MWRjODAzY2MiLCJpYXQiOjE3NDA5NTU1MzcsImV4cCI6MTc0MDk1OTEzN30.SlpHjSp72oyOAHq1sdahAB4jG_oGC5EWc9vwR_qixuU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/product/getProduct/67c4d53488f4d6ce4a9bb02d",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"product",
+								"getProduct",
+								"67c4d53488f4d6ce4a9bb02d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/product/editProduct/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"product",
+								"editProduct",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Out Of Stock Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1YjE5OWM0ODY0ODJiZDExOTYzYWYiLCJpYXQiOjE3NDEwMDkzOTMsImV4cCI6MTc0MTAxMjk5M30._0PAV54oqTn2yal1Hvs9wqAd60SqZnUjwFQRMqBT9eg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/product/getOutOfStockProducts",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"product",
+								"getOutOfStockProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Best Selling Products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1YjE5OWM0ODY0ODJiZDExOTYzYWYiLCJpYXQiOjE3NDEwMDkzOTMsImV4cCI6MTc0MTAxMjk5M30._0PAV54oqTn2yal1Hvs9wqAd60SqZnUjwFQRMqBT9eg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/product/getBestSellingProducts",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"product",
+								"getBestSellingProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product picture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1YjE5OWM0ODY0ODJiZDExOTYzYWYiLCJpYXQiOjE3NDEwMTQ4OTMsImV4cCI6MTc0MTAxODQ5M30.D3Jooac4wW0EYJyPp56Hmj6ESff4EzdL2YdcUtqsAko",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "newProductPicture",
+									"type": "file",
+									"src": "/C:/Users/Informatica/Documents/Proyecto-Bimestral/public/uploads/product-pictures/Goku-1740952884832.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/product/updateProductPicture/67c5b239c486482bd11963b4",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"product",
+								"updateProductPicture",
+								"67c5b239c486482bd11963b4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search an filter products",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1YjE5OWM0ODY0ODJiZDExOTYzYWYiLCJpYXQiOjE3NDEwMjI1MjgsImV4cCI6MTc0MTAyNjEyOH0.Vb9Yll-ljMb3DPkfiD_eSNc4xs3H9tVmd-t5uY3KckU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/product/filterProducts?category=67c5dd13654105724d87c099&mostSold=",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"product",
+								"filterProducts"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "leche",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "67c5dd13654105724d87c099"
+								},
+								{
+									"key": "mostSold",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M1YjE5OWM0ODY0ODJiZDExOTYzYWYiLCJpYXQiOjE3NDEwMjI1MjgsImV4cCI6MTc0MTAyNjEyOH0.Vb9Yll-ljMb3DPkfiD_eSNc4xs3H9tVmd-t5uY3KckU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/product/deleteProductById/67c5dd50654105724d87c0a1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"product",
+								"deleteProductById",
+								"67c5dd50654105724d87c0a1"
 							]
 						}
 					},
