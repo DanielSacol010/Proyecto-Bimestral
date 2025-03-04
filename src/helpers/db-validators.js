@@ -33,11 +33,14 @@ export const isClientRole = async (uid = " ") => {
 }
 
 export const categoryExists = async (id = "") => {
-    const existe = await Category.findById(id)
-    if(!existe){
-        throw new Error("Category not found")
+    const category = await Category.findById(id);
+    if (!category) {
+        throw new Error("Category not found");
     }
-}
+    if (!category.status) {
+        throw new Error("Category is not active");
+    }
+};
 export const productExists = async (id = " ") => {
     const existe = await Product.findById(id)
     if(!existe){

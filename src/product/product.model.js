@@ -17,8 +17,7 @@ const productSchema = Schema({
         maxLength: [100, "Description cannot exceed 100 characters"]
     },
     productPicture:{
-        type: String,
-        default: "product.jpg"
+        type: String
     },
     stock:{
         type: Number,
