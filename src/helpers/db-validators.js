@@ -42,8 +42,11 @@ export const categoryExists = async (id = "") => {
     }
 };
 export const productExists = async (id = " ") => {
-    const existe = await Product.findById(id)
-    if(!existe){
+    const product = await Product.findById(id)
+    if(!product){
         throw new Error("Product not found")
+    }
+    if(!product.status){
+        throw new Error("Product not available")
     }
 }

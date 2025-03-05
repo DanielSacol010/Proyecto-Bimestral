@@ -35,7 +35,7 @@ const productSchema = Schema({
     },
     status:{
         type: Boolean,
-        deafult: true
+        default: true
     }
 },
 {
