@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "229a570f-2586-4b71-ac3b-53d880db33f9",
+		"_postman_id": "649a7300-ddc3-40a2-b1b9-4a7b46119129",
 		"name": "Proyecto Bimestre I",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "41829896"
+		"_exporter_id": "42278127"
 	},
 	"item": [
 		{
@@ -1015,6 +1015,126 @@
 								"product",
 								"deleteProductById",
 								"67c5dd50654105724d87c0a1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cart",
+			"item": [
+				{
+					"name": "add product to cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0OTBlZGM3ZDQ4YTQ1MWVmYmIwNmQiLCJpYXQiOjE3NDEyMTQ0NTQsImV4cCI6MTc0MTIxODA1NH0.yF4hVNrRzlQ__G6SXjxRnDMlD9A6xiT6y4TnQmPzOJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productId\": \"67c7a11ee5c76481875d3722\",\r\n    \"quantity\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/cart/addToCart",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"cart",
+								"addToCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0OTBlZGM3ZDQ4YTQ1MWVmYmIwNmQiLCJpYXQiOjE3NDEyMTQ0NTQsImV4cCI6MTc0MTIxODA1NH0.yF4hVNrRzlQ__G6SXjxRnDMlD9A6xiT6y4TnQmPzOJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/cart/getCart",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"cart",
+								"getCart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product of cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0OTBlZGM3ZDQ4YTQ1MWVmYmIwNmQiLCJpYXQiOjE3NDEyMTQ0NTQsImV4cCI6MTc0MTIxODA1NH0.yF4hVNrRzlQ__G6SXjxRnDMlD9A6xiT6y4TnQmPzOJo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/cart/deleteProductFromCart/67c7b997881fd30b583dbc2a",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"cart",
+								"deleteProductFromCart",
+								"67c7b997881fd30b583dbc2a"
 							]
 						}
 					},
