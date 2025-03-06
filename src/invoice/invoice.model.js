@@ -3,17 +3,37 @@ import {Schema, model} from "mongoose";
 const invoiceSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
-        ref: "User"
+        ref: "User",
+        required: true
     },
     date: {
         type: Date,
         default: Date.now(),
         required: true
     },
-    cart: {
-        type: Schema.Types.ObjectId,
-        ref: "Cart"
-    },
+    products: [{
+        productId: {
+            type: Schema.Types.ObjectId,
+            ref: "Product",
+            required: true
+        },
+        name: {
+            type: String,
+            required: true
+        },
+        quantity: {
+            type: Number,
+            required: true
+        },
+        price: {
+            type: Number,
+            required: true
+        },
+        subTotal: {
+            type: Number,
+            required: true
+        }
+    }],
     total: {
         type: Number,
         required: true

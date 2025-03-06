@@ -22,11 +22,17 @@ export const completePurchase = async (req, res) => {
         cart.products.forEach(prod => {
             total += prod.subTotal;
         });
-        
+
         const invoice = new Invoice({
             user: usuario._id,
             date: new Date(),
-            cart: cart._id,
+            products: cart.products.map(item => ({
+                productId: item.productId._id,
+                name: item.productId.name, 
+                price: item.productId.price,
+                quantity: item.quantity,
+                subTotal: item.subTotal
+            })),
             total: total
         });
         
@@ -53,7 +59,7 @@ export const completePurchase = async (req, res) => {
         const stream = fs.createWriteStream(filePath);
         doc.pipe(stream);
         
-        doc.fontSize(18).text('INVOICE', { align: 'center' });
+        doc.fontSize(18).text("Factura", { align: "center" });
         doc.moveDown();
         
         doc.fontSize(12)
@@ -65,8 +71,8 @@ export const completePurchase = async (req, res) => {
         doc.moveDown()
             .text('Products:', { underline: true });
             
-        cart.products.forEach((item, i) => {
-            doc.text(`${i+1}. ${item.productId.name} - Cant: ${item.quantity} - Q${item.productId.price} - Subtotal: Q${item.subTotal}`);
+        invoice.products.forEach((item, i) => {
+            doc.text(`${i+1}. ${item.name} - Cant: ${item.quantity} - Q${item.price} - Subtotal: Q${item.subTotal}`);
         });
         
         doc.moveDown()
@@ -91,3 +97,5 @@ export const completePurchase = async (req, res) => {
         });
     }
 }
+
+
