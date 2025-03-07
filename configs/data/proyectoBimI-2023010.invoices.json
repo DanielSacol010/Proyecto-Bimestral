@@ -1,0 +1,235 @@
+[{
+  "_id": {
+    "$oid": "67c923f56a0323c6af9461a8"
+  },
+  "user": {
+    "$oid": "67c490edc7d48a451efbb06d"
+  },
+  "date": {
+    "$date": "2025-03-06T04:26:29.157Z"
+  },
+  "products": [
+    {
+      "productId": {
+        "$oid": "67c4d53488f4d6ce4a9bb02d"
+      },
+      "quantity": 3,
+      "price": 300,
+      "subTotal": 900,
+      "_id": {
+        "$oid": "67c923f56a0323c6af9461a9"
+      }
+    }
+  ],
+  "total": 900,
+  "createdAt": {
+    "$date": "2025-03-06T04:26:29.165Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T04:26:29.165Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c924dce6adb56baca575cc"
+  },
+  "user": {
+    "$oid": "67c490edc7d48a451efbb06d"
+  },
+  "date": {
+    "$date": "2025-03-06T04:30:20.483Z"
+  },
+  "products": [
+    {
+      "productId": {
+        "$oid": "67c4d53488f4d6ce4a9bb02d"
+      },
+      "quantity": 4,
+      "price": 300,
+      "subTotal": 1200,
+      "_id": {
+        "$oid": "67c924dce6adb56baca575cd"
+      },
+      "name": "Goku "
+    }
+  ],
+  "total": 1200,
+  "createdAt": {
+    "$date": "2025-03-06T04:30:20.489Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T00:10:31.869Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c925286b1adca316da9a2d"
+  },
+  "user": {
+    "$oid": "67c490edc7d48a451efbb06d"
+  },
+  "date": {
+    "$date": "2025-03-06T04:31:36.069Z"
+  },
+  "products": [
+    {
+      "productId": {
+        "$oid": "67c4d53488f4d6ce4a9bb02d"
+      },
+      "name": "Goku ",
+      "quantity": 3,
+      "price": 300,
+      "subTotal": 900,
+      "_id": {
+        "$oid": "67c925286b1adca316da9a2e"
+      }
+    }
+  ],
+  "total": 900,
+  "createdAt": {
+    "$date": "2025-03-06T04:31:36.077Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T04:31:36.077Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c92bb65d0122ce03c07ed4"
+  },
+  "user": {
+    "$oid": "67c490edc7d48a451efbb06d"
+  },
+  "date": {
+    "$date": "2025-03-06T04:59:34.288Z"
+  },
+  "products": [
+    {
+      "productId": {
+        "$oid": "67c4d53488f4d6ce4a9bb02d"
+      },
+      "name": "Goku ",
+      "quantity": 3,
+      "price": 300,
+      "subTotal": 900,
+      "_id": {
+        "$oid": "67c92bb65d0122ce03c07ed5"
+      }
+    },
+    {
+      "productId": {
+        "$oid": "67c7b997881fd30b583dbc2a"
+      },
+      "name": "Juguete niños",
+      "quantity": 3,
+      "price": 200,
+      "subTotal": 600,
+      "_id": {
+        "$oid": "67c92bb65d0122ce03c07ed6"
+      }
+    }
+  ],
+  "total": 1500,
+  "createdAt": {
+    "$date": "2025-03-06T04:59:34.294Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T04:59:34.294Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca2a3f55a824bcfd7b787b"
+  },
+  "user": {
+    "$oid": "67c490edc7d48a451efbb06d"
+  },
+  "date": {
+    "$date": "2025-03-06T23:05:35.200Z"
+  },
+  "products": [
+    {
+      "productId": {
+        "$oid": "67c7b997881fd30b583dbc2a"
+      },
+      "name": "Juguete niños",
+      "quantity": 3,
+      "price": 200,
+      "subTotal": 600,
+      "_id": {
+        "$oid": "67ca2a3f55a824bcfd7b787c"
+      }
+    }
+  ],
+  "total": 600,
+  "createdAt": {
+    "$date": "2025-03-06T23:05:35.204Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T23:05:35.204Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca2afe2f18947a941b5c83"
+  },
+  "user": {
+    "$oid": "67c490edc7d48a451efbb06d"
+  },
+  "date": {
+    "$date": "2025-03-06T23:08:46.501Z"
+  },
+  "products": [
+    {
+      "productId": {
+        "$oid": "67c7b997881fd30b583dbc2a"
+      },
+      "name": "Juguete niños",
+      "quantity": 3,
+      "price": 200,
+      "subTotal": 600,
+      "_id": {
+        "$oid": "67ca2afe2f18947a941b5c84"
+      }
+    }
+  ],
+  "total": 600,
+  "createdAt": {
+    "$date": "2025-03-06T23:08:46.506Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T23:08:46.506Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca2be8a9e09915b387f65b"
+  },
+  "user": {
+    "$oid": "67c490edc7d48a451efbb06d"
+  },
+  "date": {
+    "$date": "2025-03-06T23:12:40.569Z"
+  },
+  "products": [
+    {
+      "productId": {
+        "$oid": "67c7b997881fd30b583dbc2a"
+      },
+      "name": "Juguete niños",
+      "quantity": 3,
+      "price": 200,
+      "subTotal": 600,
+      "_id": {
+        "$oid": "67ca2be8a9e09915b387f65c"
+      }
+    }
+  ],
+  "total": 600,
+  "createdAt": {
+    "$date": "2025-03-06T23:12:40.575Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T23:12:40.575Z"
+  }
+}]

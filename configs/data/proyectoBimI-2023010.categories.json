@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "67c460bbae25c1afe7deb537"
+  },
+  "name": "Default",
+  "description": "Default category",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-02T13:44:27.612Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-02T13:44:27.621Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c49d4db2adf8dc3268e946"
+  },
+  "name": "Juguetes",
+  "description": "todo tipo de jugetes",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-02T18:02:53.521Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-04T23:03:00.444Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c7a02beb81f5818fc77c85"
+  },
+  "name": "Juguetes",
+  "description": "todo tipo de jugetes",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-05T00:51:55.603Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-05T00:51:55.603Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca68bdcd9a3dd73fe2d988"
+  },
+  "name": "Accesorios",
+  "description": "todo tipo de Accesorios",
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T03:32:13.221Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T03:32:13.221Z"
+  }
+}]
