@@ -57,8 +57,8 @@ export const createUserValidator = [
 export const modifyRoleValidator = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),
-    param("uid").isMongoId().withMessage("Invalid user ID"),
-    body("role").isIn(["ADMIN_ROLE", "CLIENT_ROLE"]).withMessage("Invalid role"),
+    param("uid").isMongoId().withMessage("Invalid user ID").custom(isClientRole),
+    body("role").isIn(["ADMIN_ROLE"]).withMessage("Invalid role"),
     validarCampos,
     handleErrors
 ];
