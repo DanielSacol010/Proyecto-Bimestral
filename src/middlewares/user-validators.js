@@ -63,6 +63,13 @@ export const modifyRoleValidator = [
     handleErrors
 ];
 
+export const getUsersValidator = [
+    validateJWT,
+    hasRoles("ADMIN_ROLE"),
+    validarCampos,
+    handleErrors
+]
+
 export const updateUserValidatorAdmin = [
     validateJWT,
     hasRoles("ADMIN_ROLE"),
