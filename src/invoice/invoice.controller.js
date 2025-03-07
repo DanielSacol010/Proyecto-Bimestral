@@ -41,8 +41,8 @@ export const completePurchase = async (req, res) => {
         for (const item of cart.products) {
             await Product.findByIdAndUpdate(item.productId._id, {
                 $inc: { 
-                    stock: -item.quantity, // Decrementa el stock
-                    sold: item.quantity // Incrementa las ventas
+                    stock: -item.quantity, 
+                    sold: item.quantity
                 }
             });
         }
@@ -129,7 +129,7 @@ export const updateInvoice = async (req, res) => {
     try {
         const invoice = await Invoice.findById(id);
         if (!invoice) {
-            return res.status(404).json({
+            return res.status(400).json({
                 success: false,
                 message: "Invoice not found"
             });
@@ -137,7 +137,7 @@ export const updateInvoice = async (req, res) => {
 
         const product = await Product.findById(productId);
         if (!product) {
-            return res.status(404).json({
+            return res.status(400).json({
                 success: false,
                 message: "Product not found"
             });
@@ -145,7 +145,7 @@ export const updateInvoice = async (req, res) => {
 
         const invoiceProduct = invoice.products.find(p => p.productId.toString() === productId);
         if (!invoiceProduct) {
-            return res.status(404).json({
+            return res.status(40).json({
                 success: false,
                 message: "Product not found in invoice"
             });
