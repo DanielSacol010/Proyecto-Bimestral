@@ -40,3 +40,7 @@ Al iniciar la aplicación por primera vez, puede acceder al panel de administrac
 - **Usuario:** dsacol10
 - **Email:** dsacol10@gmail.com
 - **Contraseña:** Admin123*
+
+## Directorio de facturas
+Las facturas se encuentran dentro de public/uploads/invoices
+
