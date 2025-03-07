@@ -1,0 +1,84 @@
+[{
+  "_id": {
+    "$oid": "67c4d53488f4d6ce4a9bb02d"
+  },
+  "name": "Goku ",
+  "price": 300,
+  "description": "Figura de acción de goku",
+  "productPicture": "Goku-1740952884832.jpg",
+  "stock": 22,
+  "category": {
+    "$oid": "67c460bbae25c1afe7deb537"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-02T22:01:24.877Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T00:10:31.872Z"
+  },
+  "sold": 28
+},
+{
+  "_id": {
+    "$oid": "67c7a11ee5c76481875d3722"
+  },
+  "name": "Carro",
+  "price": 200,
+  "description": "Figura de acción de pepa",
+  "productPicture": null,
+  "stock": 0,
+  "sold": 20,
+  "category": {
+    "$oid": "67c49d4db2adf8dc3268e946"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-05T00:55:58.759Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T02:27:46.613Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c7b997881fd30b583dbc2a"
+  },
+  "name": "Juguete niños",
+  "price": 200,
+  "description": "descripcion",
+  "productPicture": null,
+  "stock": 13,
+  "sold": 12,
+  "category": {
+    "$oid": "67c49d4db2adf8dc3268e946"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-05T02:40:23.411Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T23:12:40.579Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca68fbcd9a3dd73fe2d98c"
+  },
+  "name": "Reloj",
+  "price": 200,
+  "description": "descripcion",
+  "productPicture": "Messi-1741318765425.jpg",
+  "stock": 25,
+  "sold": 0,
+  "category": {
+    "$oid": "67ca68bdcd9a3dd73fe2d988"
+  },
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-07T03:33:15.766Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-07T03:39:25.437Z"
+  }
+}]

@@ -645,6 +645,14 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "get users",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			]
 		},
@@ -1135,6 +1143,162 @@
 								"cart",
 								"deleteProductFromCart",
 								"67c7b997881fd30b583dbc2a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "invoice",
+			"item": [
+				{
+					"name": "complete purchase and generate invoice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0OTBlZGM3ZDQ4YTQ1MWVmYmIwNmQiLCJpYXQiOjE3NDEzMDIxNTYsImV4cCI6MTc0MTMwNTc1Nn0.sg3Wq9n9isbS8R4bLJi4Y3MDzTRej_UDAoRAOJSzrW4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/invoice/completePurchase",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"invoice",
+								"completePurchase"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get history purchases",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhMmVkZGM4ZTM2YzgxYWU1NjkyZGUiLCJpYXQiOjE3NDEzMDM1MzMsImV4cCI6MTc0MTMwNzEzM30.UrCWRzbpXSpHA_UO07grD2eCZ4FvpeUBEI0QbqRdkik",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/invoice/getPurchases",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"invoice",
+								"getPurchases"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update invoice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0NjM4OWU4OGM2NWU0MWRjODAzY2MiLCJpYXQiOjE3NDEzMDU4MzAsImV4cCI6MTc0MTMwOTQzMH0.KrGvGfqp9n-QMLrT-zoy1g6fekad9td8sy6Kw4V89Nw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"productId\": \"67c4d53488f4d6ce4a9bb02d\",\r\n    \"quantity\": \"4\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/invoice/updateInvoice/67c924dce6adb56baca575cc",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"invoice",
+								"updateInvoice",
+								"67c924dce6adb56baca575cc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get invoices by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M0NjM4OWU4OGM2NWU0MWRjODAzY2MiLCJpYXQiOjE3NDEzMDg5NjIsImV4cCI6MTc0MTMxMjU2Mn0.uBKV2xcqlbF2idtSVCHRILUjmrJCMXfqiNfyCXAhqfs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3000/onlineSales/v1/invoice/getInvoiceByUser/67c490edc7d48a451efbb06d",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"onlineSales",
+								"v1",
+								"invoice",
+								"getInvoiceByUser",
+								"67c490edc7d48a451efbb06d"
 							]
 						}
 					},

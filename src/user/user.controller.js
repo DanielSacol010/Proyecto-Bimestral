@@ -82,6 +82,29 @@ export const modifyRole = async (req, res) => {
     }
 }
 
+export const getUsers = async (req, res) => {
+    try {
+        const { limit = 10, from = 0 } = req.query;
+        const query = { status: true };
+        const [total, users] = await Promise.all([
+            User.countDocuments(query),
+            User.find(query)
+                .skip(Number(from))
+                .limit(Number(limit))
+        ]);
+
+        return res.status(200).json({
+            total,
+            users
+        });
+    } catch (err) {
+        return res.status(500).json({
+            message: "Error fetching users",
+            error: err.message
+        });
+    }
+}
+
 export const updateUserAdmin = async (req, res) => {
     try {
         const { uid } = req.params;

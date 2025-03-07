@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "67c46389e88c65e41dc803cc"
+  },
+  "name": "Daniel",
+  "surname": "Sacol",
+  "username": "dsacol010",
+  "email": "dsacol10@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$U/g9BVMtjZX7gntH3eQXTw$yw5AU32MpnWj5DZ4XviGCxW55Bm+shlVST6IhW30X6M",
+  "phone": "33815217",
+  "role": "ADMIN_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67c490edc7d48a451efbb06d"
+  },
+  "name": "Marcos",
+  "surname": "Solares",
+  "username": "msolares",
+  "email": "msolares@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$2zN/szirRL0UwyaQ26Mq0Q$06BIVhI/x4GmQh0td61Fiw9/CA6qsNIHv3vXyOgSCEM",
+  "profilePicture": "Captura de pantalla 2025-02-23 201258-1740938108587.png",
+  "phone": "22160098",
+  "role": "CLIENT_ROLE",
+  "status": true
+},
+{
+  "_id": {
+    "$oid": "67ca2eddc8e36c81ae5692de"
+  },
+  "name": "Angel",
+  "surname": "Mejía",
+  "username": "amejia",
+  "email": "amejia@gmail.es",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$vEX3fMqupNuTf25jK1yuEw$hjMxSrwWypWycI0ltnJJiiWC9PDeQltUPHlyvYdiGUI",
+  "profilePicture": "Messi-1741303516964.jpg",
+  "phone": "22160098",
+  "role": "CLIENT_ROLE",
+  "status": true
+}]

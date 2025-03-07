@@ -325,7 +325,7 @@ router.get(
  *     tags:
  *       - Product
  *     summary: Eliminar producto
- *     description: Marca el producto como eliminado (status: false) por ID. Requiere rol ADMIN_ROLE.
+ *     description: "Marca el producto como eliminado (status: false) por ID. Requiere rol ADMIN_ROLE."
  *     parameters:
  *       - in: path
  *         name: pid

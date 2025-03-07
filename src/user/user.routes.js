@@ -1,8 +1,8 @@
 import { Router } from "express";
-import { createUser, modifyRole, updateUserAdmin, deleteUser, updateUser, updatePassword, updateProfilePicture, deleteUserClient } from "./user.controller.js";
+import { createUser, modifyRole, updateUserAdmin, deleteUser, updateUser, updatePassword, updateProfilePicture, deleteUserClient, getUsers } from "./user.controller.js";
 import { uploadProfilePicture } from "../middlewares/multer-uploads.js";
 import { deleteFileOnError } from "../middlewares/delete-file-on-error.js";
-import { createUserValidator, modifyRoleValidator, updateUserValidatorAdmin, deleteUserValidator, updateUserValidator, updatePasswordValidator, updateProfilePictureValidator, deleteUserClientValidator } from "../middlewares/user-validators.js";
+import { createUserValidator, modifyRoleValidator, updateUserValidatorAdmin, deleteUserValidator, updateUserValidator, updatePasswordValidator, updateProfilePictureValidator, deleteUserClientValidator, getUsersValidator } from "../middlewares/user-validators.js";
 
 const router = Router();
 
@@ -227,6 +227,59 @@ router.put(
     updateUserValidator,
     updateUser
 );
+
+/**
+ * @swagger
+ * /onlineSales/v1/users/getUsers:
+ *   get:
+ *     summary: Get a list of users (admin only).
+ *     security:
+ *       - bearerAuth: []
+ *     tags:
+ *       - User
+ *     parameters:
+ *       - in: query
+ *         name: limit
+ *         schema:
+ *           type: integer
+ *           default: 10
+ *         description: Maximum number of users to return.
+ *       - in: query
+ *         name: from
+ *         schema:
+ *           type: integer
+ *           default: 0
+ *         description: Number of users to skip.
+ *     responses:
+ *       "200":
+ *         description: A list of users.
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   _id:
+ *                     type: string
+ *                   name:
+ *                     type: string
+ *                   email:
+ *                     type: string
+ *                   role:
+ *                     type: string
+ *       "400":
+ *         description: Bad request.
+ *       "401":
+ *         description: Unauthorized.
+ *       "500":
+ *         description: Internal server error.
+ */
+router.get(
+    "/getUsers",
+    getUsersValidator,
+    getUsers
+)
 
 /**
  * @swagger

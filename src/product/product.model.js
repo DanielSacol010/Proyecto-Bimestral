@@ -50,13 +50,4 @@ productSchema.methods.toJSON = function(){
     return product
 }
 
-productSchema.methods.purchase = async function(quantity) {
-    if (quantity > this.stock) {
-        throw new Error('Insufficient stock');
-    }
-    this.stock -= quantity;
-    this.sold += quantity;
-    await this.save();
-};
-
 export default model("Product", productSchema)
